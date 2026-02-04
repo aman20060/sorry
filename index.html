@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message for You</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        h1 { color: #ff4d6d; font-size: 2.5rem; }
+        p { color: #590d22; font-size: 1.2rem; max-width: 80%; }
+        .buttons { margin-top: 30px; position: relative; width: 300px; height: 100px; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 50px;
+            border: none;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; position: absolute; left: 0; }
+        #noBtn { background-color: #ced4da; color: #495057; position: absolute; right: 0; }
+    </style>
+</head>
+<body>
+
+    <h1>I'm Sorry ❤️</h1>
+    <p> kasam se next time se utha lunga next time se pakka. please maaaf kardeeee 😭</p>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="forgiven()">ok</button>
+        <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            const btn = document.getElementById('noBtn');
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function forgiven() {
+            document.body.innerHTML = `
+                <h1 style="font-size: 5rem;">😊</h1>
+                <h1>Yay! Thank you!</h1>
+                <p>I'm putting my phone down now and heading your way (or waiting for your text)!</p>
+                <p>I love you!</p>
+            `;
+        }
+    </script>
+</body>
+</html>
